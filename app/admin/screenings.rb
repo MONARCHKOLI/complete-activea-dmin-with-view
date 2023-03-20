@@ -7,12 +7,11 @@ ActiveAdmin.register Screening do
   #
   permit_params :check_in_id, :response, :screening_description 
   #
-  # or
-  #
   # permit_params do
   #   permitted = [:check_in_id, :response]
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
+
   
 end
