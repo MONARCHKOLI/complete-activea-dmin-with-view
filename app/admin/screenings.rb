@@ -5,7 +5,7 @@ ActiveAdmin.register Screening do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :check_in_id, :response, :screening_type
+  permit_params :check_in_id, :response, :screening_description 
   #
   # or
   #
