@@ -38,9 +38,10 @@ ActiveAdmin.register Question do
       row :Screening_type do
         screening_type.key(resource&.screening&.id)
       end
-      row :screening_id
+      row :screening_id 
+      row :question
+      row :created_at
     end
-    default_main_content
   end
 
   index title: "Questions" do

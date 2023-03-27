@@ -1,11 +1,11 @@
 class ScreeningsController < ApplicationController
     # before_action :get_screening, only: [:create]
     def index
-        @screening = Screening.find_by(check_in_id: params[:check_in_id])
+        @screening = Screening.all
     end
 
     def show
-        @question = Question.find_by(question_type: params[:question_type])
+
     end
 
     def new
@@ -13,9 +13,9 @@ class ScreeningsController < ApplicationController
     end
 
     def create
-        @check_in = CheckIn.find(params[:check_in_id])
-        @screening = @check_in.screenings.create(check_in_id: params[:check_in_id],response: params[:screening])
-        redirect_to check_in_screenings_path
+        @screening = Screening.create(:screening_type,:screening_description)
+        # @answer = Answer.create(:question_id @screening.id, :answer, :user_id current_user)
+        redirect_to screenings_path
     end
 
 end

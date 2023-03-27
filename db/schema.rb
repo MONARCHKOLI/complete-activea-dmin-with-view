@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_20_100719) do
+ActiveRecord::Schema.define(version: 2023_03_27_132151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,16 +37,18 @@ ActiveRecord::Schema.define(version: 2023_03_20_100719) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "user_type"
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
   create_table "answers", force: :cascade do |t|
     t.integer "question_id"
-    t.string "answer"
+    t.json "response"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+    t.integer "screening_id"
   end
 
   create_table "check_ins", force: :cascade do |t|
@@ -54,6 +56,8 @@ ActiveRecord::Schema.define(version: 2023_03_20_100719) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "screening_id"
+    t.json "answers"
   end
 
   create_table "patients", force: :cascade do |t|
@@ -64,18 +68,18 @@ ActiveRecord::Schema.define(version: 2023_03_20_100719) do
   end
 
   create_table "questions", force: :cascade do |t|
-    t.string "question"
     t.integer "screening_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "question"
   end
 
   create_table "screenings", force: :cascade do |t|
-    t.integer "check_in_id"
-    t.string "screening_description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "screening_type"
+    t.string "screening_description"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|

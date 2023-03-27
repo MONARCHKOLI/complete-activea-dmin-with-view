@@ -13,6 +13,17 @@
   </head>
 
   <body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <% if current_user %>
+      <%= link_to 'logout', destroy_user_session_path, method: :delete %>
+      <%= link_to 'Screening', screenings_path%>
+  <% else %>
+      <%= link_to 'Login as ADMIN', new_admin_user_session_path %>
+      <%= link_to 'Login as USER', user_session_path %>
+      <%= link_to 'Sign Up to create Accoutn', new_user_registration_path%>
+  <% end %>
     <%= yield %>
   </body>
 </html>

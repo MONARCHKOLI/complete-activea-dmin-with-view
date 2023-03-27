@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :admin_users, ActiveAdmin::Devise.config
+  devise_for :users
+  devise_for :admin_users, ActiveAdmin::Devise.config 
   ActiveAdmin.routes(self)
-  resources :check_ins, only: [:new, :create, :show, :update] do
-    resources :screenings do
-      resources :questions
+  resources :check_ins, only: [:new, :create, :show, :update]
+  resources :screenings do
+    resources :questions do
+      resources :answers
     end
   end
-  root to: "check_ins#new"
+  root to: "home#index"
+  
 end

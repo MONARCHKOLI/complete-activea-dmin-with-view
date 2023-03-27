@@ -1,5 +1,8 @@
-<%= @screening.severity%>
-<br>
-<%= link_to "Home" , root_path%>
-
-<%= link_to "Screen Again", check_in_path(params[:check_in_id])%>
+<h1>Screening Index Page</h1>
+<%= current_user.email%>
+<p>Types Of Screening :</p>
+<ul>
+    <%@screening.each_with_index do |screening,index|%>
+        <li><%= link_to "#{screening.screening_type.capitalize}" , new_screening_question_answer_path(screening_id: screening.id, question_id: Question.find_by(screening_id: screening.id).id) %></li>
+    <%end%>
+</ul>
