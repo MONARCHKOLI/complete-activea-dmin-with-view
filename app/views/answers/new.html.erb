@@ -1,20 +1,19 @@
 <h1>Answers New page</h1>
 
-<%# <% @question.each do |question|%>
-    <%# <p><%= question.question %></p> 
-<%# <%end%>
-<%= form_for(@answer, url:  screening_question_answers_path(Screening.first), method: :post) do |f| %>
+
+
+<%= form_for(:answer, url:  screening_question_answers_path(Answer.last), method: :post) do |f| %>
   <% @question.each_with_index do |question, index|%>
     <br>
     <br>
     <%= f.label question.question %>
     <br>
     <br>
-    <%= f.select("response", Screening::SCORE.keys, id: "response-#{index}") %>
-    <%= f.hidden_field :screening_id, value: question.screening_id %>
+    <%= f.select("#{index+1}-#{question.question}", Screening::SCORE.keys) %>
     <%= f.hidden_field :question_id, value: question.id %>
-    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.hidden_field :screening_id, value: question.screening_id %>
   <% end %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
   <br>
   <br>
   <br>
