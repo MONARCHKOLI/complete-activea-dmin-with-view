@@ -5,13 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Patient.create(birthdate: "2001-01-01", patient_number: "ABC123")
-CheckIn.create(user_id:1,patient_id:1)
-Screening.create(screening_type: "depression",check_in_id:1,response:{"absbssbbb"=>"ababbabbbbbbba"})
-Screening.create(screening_type: "anxiety",check_in_id:1,response:{"absbssbbb"=>"ababbabbbbbbba"})
-Screening.create(screening_type: "depression",check_in_id:1,response:{"absbssbbb"=>"ababbabbbbbbba"})
-Question.create(question:["Little interest or pleasure in doing things", "Feeling down, depressed, or hopeless"],screening_id: 1)
-Question.create(question:["bbbbbbbbbbbbbbbb", "ccccccccccccccccc"],screening_id: 3)
-Question.create(question:["vvajvjvahbvavbjhavs", "avkakvnanavks"],screening_id: 2)
-User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+# Patient.create(birthdate: "2001-01-01", patient_number: "ABC123")
+# CheckIn.create(user_id:1,patient_id:1)
+# Screening.create(screening_type: "depression",check_in_id:1,response:{"absbssbbb"=>"ababbabbbbbbba"})
+# Screening.create(screening_type: "anxiety",check_in_id:1,response:{"absbssbbb"=>"ababbabbbbbbba"})
+# Screening.create(screening_type: "depression",check_in_id:1,response:{"absbssbbb"=>"ababbabbbbbbba"})
+# Question.create(question:["Little interest or pleasure in doing things", "Feeling down, depressed, or hopeless"],screening_id: 1)
+# Question.create(question:["bbbbbbbbbbbbbbbb", "ccccccccccccccccc"],screening_id: 3)
+# Question.create(question:["vvajvjvahbvavbjhavs", "avkakvnanavks"],screening_id: 2)
+# User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+# AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password', role: 'admin')
+
+# %i[guest support staff manager admin].each do |role|
+#   AdminUser.find_or_create_by!(email: "#{role}@example.com") do |admin_user|
+#     admin_user.role = role
+#     admin_user.password = 'password'
+#     admin_user.password_confirmation = 'password'
+#   end
+# end

@@ -38,6 +38,7 @@ gem 'activeadmin'
 # Plus integrations with:
 gem 'devise'
 gem 'cancancan'
+gem 'active_admin_role'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false

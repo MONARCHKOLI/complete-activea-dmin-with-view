@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_20_100719) do
+ActiveRecord::Schema.define(version: 2023_04_05_054426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,24 +29,50 @@ ActiveRecord::Schema.define(version: 2023_03_20_100719) do
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource"
   end
 
+  create_table "active_admin_managed_resources", force: :cascade do |t|
+    t.string "class_name", null: false
+    t.string "action", null: false
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["class_name", "action", "name"], name: "active_admin_managed_resources_index", unique: true
+  end
+
+  create_table "active_admin_permissions", force: :cascade do |t|
+    t.integer "managed_resource_id", null: false
+    t.integer "role", limit: 2, default: 0, null: false
+    t.integer "state", limit: 2, default: 0, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["managed_resource_id", "role"], name: "active_admin_permissions_index", unique: true
+  end
+
   create_table "admin_users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "user_type"
+    t.integer "role", limit: 2, default: 0, null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
   create_table "answers", force: :cascade do |t|
     t.integer "question_id"
-    t.string "answer"
+    t.json "response"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+    t.integer "screening_id"
   end
 
   create_table "check_ins", force: :cascade do |t|
@@ -64,18 +90,18 @@ ActiveRecord::Schema.define(version: 2023_03_20_100719) do
   end
 
   create_table "questions", force: :cascade do |t|
-    t.string "question"
     t.integer "screening_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "question"
   end
 
   create_table "screenings", force: :cascade do |t|
-    t.integer "check_in_id"
-    t.string "screening_description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "screening_type"
+    t.string "screening_description"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -84,6 +110,11 @@ ActiveRecord::Schema.define(version: 2023_03_20_100719) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true

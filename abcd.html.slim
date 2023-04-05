@@ -1,0 +1,1107 @@
+<style>
+    /* Global Section */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+    
+    *,
+    *:before,
+    *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    
+    html,
+    body {
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        background-color: #EEEFF3;
+        font-family: 'Roboto', sans-serif;
+    
+    }
+    
+    ul,
+    ol,
+    dl,
+    p {
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    a,
+    a:hover,
+    a:active,
+    a:visited {
+        color: #000;
+        text-decoration: none;
+    }
+    
+    .image_holder .image_holder {
+        display: none;
+    }
+    
+    #page {
+        background: #EEEFF3;
+    }
+    
+    #page>.row:nth-child(2) {
+        display: none;
+    }
+    
+    #page,
+    #page>.row:nth-child(1),
+    #page>.row:nth-child(1) .columns,
+    #page>.row:nth-child(1) .columns .landing_page-show,
+    #page>.row:nth-child(1) .columns .landing_page-show .custom_html_holder,
+    #page>.row:nth-child(1) .columns .landing_page-show .custom_html_holder .columns {
+        height: 100%;
+    }
+    
+    body.show_landing_page {
+        height: 100%;
+    }
+    
+    /* Loading Spinner */
+    
+    .lds-roller {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+        text-align: center;
+    }
+    
+    .lds-roller div {
+        animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        transform-origin: 40px 40px;
+    }
+    
+    .lds-roller div:after {
+        content: " ";
+        display: block;
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: black;
+        margin: -4px 0 0 -4px;
+    }
+    
+    .lds-roller div:nth-child(1) {
+        animation-delay: -0.036s;
+    }
+    
+    .lds-roller div:nth-child(1):after {
+        top: 63px;
+        left: 63px;
+    }
+    
+    .lds-roller div:nth-child(2) {
+        animation-delay: -0.072s;
+    }
+    
+    .lds-roller div:nth-child(2):after {
+        top: 68px;
+        left: 56px;
+    }
+    
+    .lds-roller div:nth-child(3) {
+        animation-delay: -0.108s;
+    }
+    
+    .lds-roller div:nth-child(3):after {
+        top: 71px;
+        left: 48px;
+    }
+    
+    .lds-roller div:nth-child(4) {
+        animation-delay: -0.144s;
+    }
+    
+    .lds-roller div:nth-child(4):after {
+        top: 72px;
+        left: 40px;
+    }
+    
+    .lds-roller div:nth-child(5) {
+        animation-delay: -0.18s;
+    }
+    
+    .lds-roller div:nth-child(5):after {
+        top: 71px;
+        left: 32px;
+    }
+    
+    .lds-roller div:nth-child(6) {
+        animation-delay: -0.216s;
+    }
+    
+    .lds-roller div:nth-child(6):after {
+        top: 68px;
+        left: 24px;
+    }
+    
+    .lds-roller div:nth-child(7) {
+        animation-delay: -0.252s;
+    }
+    
+    .lds-roller div:nth-child(7):after {
+        top: 63px;
+        left: 17px;
+    }
+    
+    .lds-roller div:nth-child(8) {
+        animation-delay: -0.288s;
+    }
+    
+    .lds-roller div:nth-child(8):after {
+        top: 56px;
+        left: 12px;
+    }
+    
+    @keyframes lds-roller {
+        0% {
+            transform: rotate(0deg);
+        }
+    
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    
+    
+    /* Container Section */
+    
+    .container-sec {
+        background-image: url('https://dualstack.cloudinary.com/mobiassets/image/upload/c_fill,h_176,w_640/f_auto,fl_progressive,fl_force_strip/aairt6f6r0ca1yddrzz1.jpg');
+        height: 100%;
+        background-repeat: repeat;
+        font-family: 'Roboto', sans-serif;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 15px 15px;
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: top center;
+    }
+    
+    /* Top Section */
+    .topSect {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .topSect .logo {
+        width: 90px;
+        height: 35px;
+        margin-top: -12px;
+    }
+    
+    .topSect .exitBtn {
+        margin-top: 0px;
+        padding: 5px 10px;
+        font-weight: bold;
+        color: #000;
+        width: 50px;
+        height: 23px;
+        font-size: 13px;
+        color: #a3a3a3;
+        border: 1px solid #a3a3a3;
+        border-radius: 5px;
+    }
+    
+    
+    
+    a.flags {
+        margin-top: 0;
+        padding: 5px 10px;
+        font-weight: bold;
+        font-size: 13px;
+        width: 50px;
+        height: 23px;
+        color: #a3a3a3;
+        float: left;
+    }
+    
+    
+    
+    
+    .topSect img {
+        width: 34px;
+    }
+    
+    .logo img {
+        width: 130px;
+    }
+    
+    /* Content Section */
+    
+    .content-sec {
+        width: 640px;
+        float: right;
+        text-align: center;
+    }
+    
+    .content-sec li {
+        color: #000;
+        padding: 0;
+        font-size: 12px;
+        text-align: left;
+        list-style: disc;
+        list-style: none;
+    }
+    
+    .content-sec .contents ul {
+        padding: 0 60px;
+        float: left;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .content-sec .contents p,
+    .content-sec .contents p a {
+        color: #696969;
+        font-size: 12px;
+    }
+    
+    .content-sec p {
+        color: #000;
+        text-align: center;
+        font-size: 14px;
+        line-height: 22px;
+    }
+    
+    .content-sec .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-top: 23%;
+    }
+    
+    .content-sec .buttons input {
+        width: 100%;
+        padding: 40px 20px 40px 100px;
+        border: 0;
+        box-shadow: none;
+        border: 3px solid #c3c3c3 !important;
+        border-radius: 10px;
+        text-align: left;
+        color: #000;
+        margin-bottom:10px;
+    }
+    
+    .content-sec .contents li:before {
+        border-left: 6px solid #000;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        content: "";
+        position: absolute;
+        left: -10px;
+        top: 5px;
+    }
+    
+    
+    .content-sec .contents li {
+        font-size: 13px;
+        position: relative;
+        color: #696969;
+    }
+    
+    .content-sec .buttons a {
+        text-align: center;
+        width: 100%;
+        padding: 20px;
+        float: left;
+        border-radius: 20px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 28px;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #fff;
+        background: #2196f3;
+        background-size: 100%;
+    }
+    
+    .content-sec .buttons a:hover {
+        background: #2196f3;
+    }
+    
+    .greyBtn {
+        background-color: grey !important;
+        color: white;
+        cursor: not-allowed;
+    }
+    
+    .blueBtn {
+        background-color: #2196f3;
+        color: white;
+        cursor: pointer;
+    }
+    
+    .content-sec .buttons a.confirm_btn {
+        text-align: center;
+        width: 100%;
+        padding: 20px;
+        float: left;
+        border-radius: 20px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 2em;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: #fff;
+        background: #2196f3;
+        background-size: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .content-sec .buttons a.confirm_btn:hover {
+        background: #2196f3;
+        background-size: 95%;
+        background-position: top center;
+    }
+    
+    .content-sec .buttons .pincode {
+        margin-bottom: 10px;
+        text-align: center;
+        padding-left: 0;
+    }
+    
+    .content-sec .buttons input[type="number"] {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    
+    .mob-cont {
+        position: relative;
+        width: 100%;
+    }
+    
+    .num-panel {
+        position: absolute;
+        top: 0px;
+        left: 0;
+        bottom: 0;
+        display: block;
+        height: max-content;
+        z-index: 8;
+        background-size: cover;
+        background-color: #9f9f9f24;
+        text-align: center;
+        padding-top: 23px;
+        font-size: 16px;
+        border-radius: 10px;
+        color: #8b8b8b;
+        font-weight: bold;
+        padding: 22px 20px;
+        border-right: 3px solid #c3c3c3 !important;
+    }
+    
+    .num-panel img {
+        width: 40px;
+    }
+    
+    .disabled {
+        background-color: #dadada !important;
+        pointer-events: none;
+        background-image: none !important;
+    }
+    
+    .enter-pin {
+        color: #000;
+        padding: 15px 0 10px;
+        float: left;
+        width: 100%;
+        font-size: 14.6px
+    }
+    
+    .freefor {
+        color: #000;
+        padding: 0 0 25px 0;
+        float: left;
+        width: 100%;
+        font-size: 12px;
+    }
+    
+    /* Footer Section */
+    
+    .footer-sec {
+        width: 100%;
+        float: left;
+        padding: 10px 0 10px;
+    }
+    
+    .footer-sec ul {
+        margin: 0;
+        display: flex;
+        padding: 0;
+        flex-wrap: wrap;
+        clear: both;
+        justify-content: center;
+    }
+    
+    .footer-sec li {
+        list-style: none;
+        float: left;
+        padding: 0 5px 0 0;
+        color: #777;
+    
+    }
+    
+    .footer-sec p {
+        font-size: 12px;
+    }
+    
+    .footer-sec li p {
+        font-size: 12px;
+    }
+    
+    .footer-sec li a {
+        color: #aaa;
+        text-decoration: none;
+        font-size: 12px;
+    }
+    
+    .footer-sec li a:hover,
+    .footer-sec li a:visited,
+    .footer-sec li a:active {
+        color: #fff;
+        text-decoration: underline;
+    }
+    
+    .footer-sec li:after {
+        content: "|";
+        margin-left: 5px;
+        color: #aaa;
+    }
+    
+    .footer-sec li:last-child:after {
+        content: ""
+    }
+    
+    
+    .wrong-msisdn {
+        font-size: 13px;
+        display: none;
+        width: 100%;
+        text-decoration: underline;
+        cursor: pointer;
+        color: #000;
+        float: left;
+        margin-bottom: 15px;
+    }
+    
+    .steps {
+        padding-left: 5em;
+        display: block;
+        color: #000;
+        text-align: left;
+        padding-bottom: 30px;
+    }
+    
+    .step1,
+    .step2 {
+        padding-bottom: 5px;
+        display: inline-block;
+        font-size: 16px;
+    }
+    
+    .steps span {
+        display: inline-block;
+        background-color: #2196f3;
+        border-radius: 100%;
+        width: 40px;
+        height: 40px;
+        padding: 16px;
+        margin-right: 1em;
+        text-align: center;
+        color: #fff;
+        line-height: 10px;
+    }
+    
+    .content-sec p.branding_txt {
+        text-align: center;
+        font-size: 21px;
+        font-weight: 600;
+        margin-bottom: 0.8em !important;
+        color: #000;
+        line-height: normal;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .mob-cont::before {
+        padding: 35px 30px;
+    }
+    
+    @media(min-width:641px) and (max-width:1024px) {
+        .num-panel {
+            padding: 22px 20px;
+        }
+    
+        .steps {
+            padding-left: 3em;
+        }
+    
+        .container-sec {
+            background-size: auto;
+            background-position: top left;
+            background-image: url('https://dualstack.cloudinary.com/mobiassets/image/upload/c_fill,h_176,w_640/f_auto,fl_progressive,fl_force_strip/aairt6f6r0ca1yddrzz1.jpg');
+        }
+    
+        .content-sec {
+            width: 640px;
+        }
+    
+        .content-sec .buttons {
+            padding-top: 135px;
+        }
+    
+        .container-sec {
+            background-position: top center;
+        }
+    
+        .content-sec p {
+            font-size: 16px;
+            line-height: normal;
+        }
+    
+        .content-sec .contents li {
+            font-size: 13px;
+            padding-bottom: 8px;
+        }
+    
+        .footer-sec li a {
+            font-size: 11px;
+        }
+    
+        .footer-sec li {
+            padding: 0 5px 0 0;
+        }
+    
+        .footer-sec li:after {
+            margin-left: 5px;
+        }
+    
+    
+        .flags {
+            padding: 6px;
+            width: 40px;
+            font-size: 11px;
+        }
+    
+    
+        .topSect .exitBtn {
+            font-size: 11px;
+            padding: 5px 10px;
+            width: 40px;
+        }
+    
+        .topSect {
+            display: block;
+            float: right;
+            margin-bottom: 15px;
+        }
+    }
+    
+    @media(max-width:640px) {
+        .num-panel {
+            padding: 17px 20px;
+        }
+    
+        .steps {
+            width: 100%;
+            padding-left: 0;
+        }
+    
+        .content-sec .contents ul {
+            padding: 0 30px;
+        }
+    
+        .content-sec .contents {
+            padding: 0 15px;
+        }
+    
+        .content-sec .contents li {
+            font-size: 13px;
+            padding-bottom: 3px;
+        }
+    
+        .content-sec .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-top: 30%;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .content-sec .buttons input {
+            width: 100%;
+            padding: 35px 20px 35px 100px;
+        }
+    
+        .content-sec .buttons a.confirm_btn {
+            width: 100%;
+            padding: 20px;
+        }
+    
+        .flags {
+            padding: 6px;
+            width: 40px;
+            font-size: 11px;
+        }
+    
+    
+        .topSect .exitBtn {
+            font-size: 11px;
+            padding: 5px 10px;
+            width: 40px;
+        }
+    
+        .topSect {
+            display: block;
+            margin-bottom: 15px;
+        }
+    
+        .topSect .centerTxt {
+            width: 60%;
+        }
+    
+        .container-sec {
+            background-size: 100%;
+            background-position: top left;
+            background-image: url('https://dualstack.cloudinary.com/mobiassets/image/upload/c_fill,h_176,w_640/f_auto,fl_progressive,fl_force_strip/aairt6f6r0ca1yddrzz1.jpg');
+            padding: 0;
+        }
+    
+        .content-sec {
+            width: 100%;
+        }
+    
+        .content-sec p {
+            font-size: 16px;
+            line-height: normal;
+        }
+    
+        .content-sec .buttons a {
+            width: 100%;
+            padding: 20px;
+            background-position: center;
+            margin-bottom: 0;
+        }
+    
+        .footer-sec li a {
+            font-size: 11px;
+        }
+    }
+    
+    #errorDiv{
+    font-size: 12px;
+width:100%;
+float: left ;    color: red;
+    margin:5px 0
+    }
+    
+    #tickDiv{
+        display: inline-block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: green;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    padding:0;
+    }
+    </style>
+    
+    <div class="lds-roller">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    </div>
+    <div class="container-sec">
+    <div class="content-sec">
+    
+    
+    
+    
+        <!-- Subscribe button area-->
+    
+        <div class="buttons">
+            <div class="content_div">
+                <p class="branding_txt">Follow the steps to get access</p>
+                <div class="steps">
+                    <span>1</span>
+                    <p class="step1">Enter your mobile number</p> <br>
+                    <span>2</span>
+                    <p class="step2">Enter the PIN received</p>
+                </div>
+            </div>
+            <div class="mob-cont">
+                <span class="num-panel"><img
+                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABjCAYAAABt56XsAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTkgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjQ1ODE2MTRBQkIxNjExRUNBMzhFQUEwNjczODE0NDhFIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjQ1ODE2MTRCQkIxNjExRUNBMzhFQUEwNjczODE0NDhFIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NDU4MTYxNDhCQjE2MTFFQ0EzOEVBQTA2NzM4MTQ0OEUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NDU4MTYxNDlCQjE2MTFFQ0EzOEVBQTA2NzM4MTQ0OEUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5D2CrOAAAMAUlEQVR42uxd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" /></span>
+                <input type="tel" id="phoneNumber" name="phoneNumber" onkeyup="validatePhoneNumber()" required
+                    maxlength="14" type="tel" class="msisdn" autocomplete="tel" id="inputfield">
+                    <span class="wrong-msisdn">
+                                if your number is wrong click here
+                            </span>
+                <a id="tickDiv" style="display: none;" onclick="validatePhoneNumber()">&#10004;</a>
+                <a href="#" id="submitBtn" class="greyBtn button subscribe_btn"
+                    onclick="validatePhoneNumber()">Subscribe</a>
+                    <input type="text" id="pinField" inputmode="numeric" class="pincode" maxlength="4"
+                autocomplete="one-time-code" placeholder="Enter PIN" style="display: none;">
+            <a href="#" id="confirmLink" style="display:none" class="greyBtn confirm_btn DCBProtection"
+                onclick="confirmSubscription()">Confirm</a>
+                    <div id="errorDiv"></div>
+                <span class="enter-pin" id="enterpintext">You will receive 4-digit PIN</span>
+                
+
+            </div>
+    
+    
+            
+    
+        </div>
+        <!-- Content area-->
+    
+        <div class="contents">
+            <!-- Top Section area-->
+    
+    
+            <span class="freefor">FREE for 1 day then 3,25 AED/day VAT Incl.</span>
+            <div class="topSect">
+                <a class="exitBtn" href="https://www.google.com/">Exit</a>
+                <!-- <a href="#" class="logo"></a>-->
+            </div>
+            <p>Free for 24hours then, you will be charged 3,25/day automatically. No commitment, you can cancel any
+                time
+                by sending STOP PLAY to 1156. For support, please contract: <a
+                    href="mailto:support@cfm.mobi">support@cfm.mobi</a>. Free trial applicable only for first time
+                subscriber. By subscribing you give explicit consent to receive transactional and promotional
+                messages
+                related to the service on the subscribed mobile number. Please ensure your browser is not using any
+                3rd
+                party blocking technologies and you have a healthy internet connection for swift access to the
+                content.
+            </p>
+            </ul>
+    
+        </div>
+    
+        <!-- Footer area-->
+        <div class="footer-sec">
+            <ul>
+                <li><a href="https://www.1play-uae.mobi/en-ae/terms" target="_blank">Terms and Conditions </a></li>
+                <li><a href="https://www.1play-uae.mobi/en-ae/helpdesk" target="_blank">Helpdesk</a></li>
+                <li><a href="https://www.1play-uae.mobi/en-ae/unsubscribe_links">Unsubscribe</a></li>
+                <li><a href="https://www.1play-uae.mobi/en-ae/page_previewer/privacy_policy?logged_in=true">Privacy
+                        Policy</a></li>
+            </ul>
+            <a class="flags" href="http://www.1play-uae.mobi/en-ae/landing_pages/5845">AR</a>
+    
+        </div>
+    </div>
+    </div>
+    
+    <script>
+    function validatePhoneNumber() {
+    const phoneNumber = document.getElementById("phoneNumber").value;
+    const phoneNumberLength = phoneNumber.length;
+    
+    if (phoneNumber.startsWith("05") && phoneNumberLength !== 10) {
+        document.getElementById("errorDiv").innerHTML =
+            "Please enter 8 digits after 05";
+        document.getElementById("tickDiv").style.display = "none";
+        document.getElementById("phoneNumber").disabled = false;
+        document.getElementById("submitBtn").classList.add("greyBtn");
+        document.getElementById("submitBtn").classList.remove("blueBtn");
+    }
+    
+    else if (phoneNumber.startsWith("05") && phoneNumberLength === 10) {
+        document.getElementById("submitBtn").classList.add("blueBtn");
+        document.getElementById("submitBtn").classList.remove("greyBtn");
+        document.getElementById("phoneNumber").disabled = true;
+    }
+    
+    else if (phoneNumber.startsWith("5") && phoneNumberLength !== 9) {
+        document.getElementById("errorDiv").innerHTML =
+            "Please enter 8 digits after 5";
+        document.getElementById("tickDiv").style.display = "none";
+        document.getElementById("phoneNumber").disabled = false;
+        document.getElementById("submitBtn").classList.add("greyBtn");
+        document.getElementById("submitBtn").classList.remove("blueBtn");
+    } 
+    
+    else if (phoneNumber.startsWith("5") && phoneNumberLength === 9) {
+        document.getElementById("submitBtn").classList.add("blueBtn");
+        document.getElementById("submitBtn").classList.remove("greyBtn");
+        document.getElementById("phoneNumber").disabled = true;
+    }
+    else if (phoneNumber.startsWith("971") && phoneNumberLength !== 12) {
+        document.getElementById("errorDiv").innerHTML =
+            "Please enter 9 digits after 971";
+        document.getElementById("tickDiv").style.display = "none";
+        document.getElementById("phoneNumber").disabled = false;
+        document.getElementById("submitBtn").classList.add("greyBtn");
+        document.getElementById("submitBtn").classList.remove("blueBtn");
+    }
+    else if (phoneNumber.startsWith("971") && phoneNumberLength === 12) {
+        document.getElementById("submitBtn").classList.add("blueBtn");
+        document.getElementById("submitBtn").classList.remove("greyBtn");
+        document.getElementById("phoneNumber").disabled = true;
+    }
+    
+    
+    else if (phoneNumber.startsWith("0971") && phoneNumberLength !== 14) {
+        document.getElementById("errorDiv").innerHTML =
+            "Please enter 10 digits after 0971";
+        document.getElementById("tickDiv").style.display = "none";
+        document.getElementById("phoneNumber").disabled = false;
+        document.getElementById("submitBtn").classList.add("greyBtn");
+        document.getElementById("submitBtn").classList.remove("blueBtn");
+    } 
+    else if (phoneNumber.startsWith("0971") && phoneNumberLength === 14) {
+        document.getElementById("submitBtn").classList.add("blueBtn");
+        document.getElementById("submitBtn").classList.remove("greyBtn");
+        document.getElementById("phoneNumber").disabled = true;
+    }
+    
+    else if (
+        !phoneNumber.startsWith("05") &&
+        !phoneNumber.startsWith("5") &&
+        !phoneNumber.startsWith("971") &&
+        !phoneNumber.startsWith("0971") && !phoneNumber.startsWith("097105") && !phoneNumber.startsWith("09715")
+        && !phoneNumber.startsWith("9715") && !phoneNumber.startsWith("97105")
+    ) {
+        document.getElementById("errorDiv").innerHTML =
+            "Invalid phone number format. Please enter a valid phone number starting with 05, 5, 971, 0971, 97105, 09715, 9715 or 097105";
+        document.getElementById("tickDiv").style.display = "none";
+        document.getElementById("phoneNumber").disabled = false;
+        document.getElementById("submitBtn").classList.add("greyBtn");
+        document.getElementById("submitBtn").classList.remove("blueBtn");
+    } else {
+        document.getElementById("errorDiv").innerHTML = "";
+        document.getElementById("tickDiv").style.display = "inline-block";
+        document.getElementById("phoneNumber").disabled = true;
+        document.getElementById("submitBtn").classList.remove("greyBtn");
+        document.getElementById("submitBtn").classList.add("blueBtn");
+    }
+    }
+    
+    const myLink = document.getElementById('submitBtn');
+    const myLinktick = document.getElementById('tickDiv');
+    const phoneNumber = document.getElementById('phoneNumber');
+    const pinField = document.getElementById('pinField');
+    const confirmLink = document.getElementById('confirmLink');
+    
+    myLink.addEventListener('click', function (e) {
+    e.preventDefault();
+    phoneNumber.style.display = 'none';
+    myLink.style.display = 'none';
+    pinField.style.display = 'block';
+    confirmLink.style.display = 'inline-block';
+    document.getElementById("tickDiv").style.display = "none";
+    document.getElementById("enterpintext").style.display = "none";
+    });
+
+        
+    myLinktick.addEventListener('click', function (e) {
+    e.preventDefault();
+    phoneNumber.style.display = 'none';
+    myLink.style.display = 'none';
+    pinField.style.display = 'block';
+    confirmLink.style.display = 'inline-block';
+    document.getElementById("tickDiv").style.display = "none";
+    document.getElementById("enterpintext").style.display = "none";
+    });
+    
+    // Add a keyup event listener to the pin field to restrict it to 4 digits
+    pinField.addEventListener('keyup', function (e) {
+    const pinValue = pinField.value;
+    // Only enable the confirm link if the pin field has exactly 4 digits
+    if (pinValue.length === 4) {
+        confirmLink.disabled = false;
+        confirmLink.classList.add("blueBtn");
+        confirmLink.classList.remove("greyBtn");
+    } else {
+        confirmLink.disabled = true;
+        confirmLink.classList.remove("blueBtn");
+        confirmLink.classList.add("greyBtn");
+    }
+    
+    // Truncate the pin field to 4 digits
+    if (pinValue.length > 4) {
+        pinField.value = pinValue.slice(0, 4);
+    }
+    });
+    
+    
+    
+    
+    
+    var subscribeBtn = document.getElementsByClassName('subscribe_btn')[0];
+    var confirmBtn = document.getElementsByClassName('confirm_btn')[0];
+    var pinInput = document.getElementsByClassName('pincode')[0];
+    var msisdnInput = document.getElementsByClassName('msisdn')[0];
+    var errorTextPinInput = document.getElementsByClassName('error-below-input-pincode')[0];
+    var wrong_msisdn_text = document.getElementsByClassName('wrong-msisdn')[0];
+    var spinner = document.getElementsByClassName("lds-roller")[0];
+    var content_id = document.getElementsByClassName('custom_html_holder')[0].getAttribute('data-content-id')
+    var numPanel = document.getElementsByClassName('num-panel')[0];
+  	
+    var orderBtn = document.getElementById('order');
+    confirmBtn.href = orderBtn.href;
+  
+    // When LP load again after performing he_redirect user should see confirm page
+    // So, extracting msisdn from current url because this time url contains msisdn
+    // according to docs provided by partner
+    var obj = get_current_url_params();
+  
+  
+    if (obj?.msisdn !== undefined && obj?.contract_id !== undefined && sessionStorage.getItem("show_pin") === null) {
+        msisdnInput.style.display = 'block';
+        wrong_msisdn_text.style.display = 'block';
+        msisdnInput.value = obj?.msisdn;
+        msisdnInput.readOnly = true;
+        subscribeBtn.style.display = 'block';
+        spinner.style.display = 'none';
+    }
+    else if (obj?.msisdn === undefined && obj?.contract_id === undefined) {
+        let body = document.getElementsByClassName("container-sec")[0];
+        body.style.display = "none";
+        window.onpaint = he_url_with_invite_params();
+    }
+    else {
+        window.location.href;
+    }
+  
+    if (obj?.msisdn === undefined && obj?.contract_id !== undefined) {
+        subscribeBtn.disabled = false;
+        subscribeBtn.style.display = 'block';
+        msisdnInput.style.display = 'block';
+        spinner.style.display = 'none';
+    }
+    else {
+        window.location.href;
+    }
+  
+    if (obj?.msisdn !== undefined && obj?.contract_id !== undefined && sessionStorage.getItem("show_pin") !== null) {
+        subscribeBtn.style.display = 'none';
+        msisdnInput.style.display = 'none';
+        numPanel.style.display = 'none';
+        spinner.style.display = 'none';
+        confirmBtn.style.display = 'block';
+        pinInput.style.display = 'block';
+        look_for_otp();
+    }
+    else {
+        window.location.href;
+    }
+  
+    subscribeBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (obj?.msisdn === undefined && obj?.contract_id !== undefined) {
+            if (validate_msisdn()) {
+                window.location.href = pin_generate_url_with_params("wifi");
+            }
+            else {
+                errorTextPinInput.textContent = 'Please enter your valid mobile number.';
+                errorTextPinInput.style.display = 'block';
+                return;
+            }
+        }
+        else if (obj?.msisdn !== undefined && obj?.contract_id !== undefined) {
+            window.location.href = pin_generate_url_with_params("wap");
+        }
+        else {
+            window.location.href = he_url_with_invite_params();
+        }
+    })
+  
+    confirmBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (pinInput.value.length != 4) {
+            errorTextPinInput.textContent = 'PIN code must be 4 digits';
+            errorTextPinInput.style.display = 'block';
+            return;
+        }
+        window.location.href = trigger_url_with_pin_params();
+    })
+  
+    wrong_msisdn_text.addEventListener("click", function (e) {
+        e.preventDefault();
+        wrong_msisdn_text.style.display = 'none';
+        msisdnInput.readOnly = false;
+        msisdnInput.value = "";
+        msisdnInput.focus();
+        var url = window.location.href;
+        params_string = url.split('?')[1];
+        params = new URLSearchParams(params_string);
+        params_obj = Object.fromEntries(params.entries());
+        window.history.replaceState({}, "", url.split('?')[0] + '?contract_id=' + params_obj["contract_id"]);
+    })
+  
+    // On first click user should redirect to he_redirect trigger 
+    // with invite/order params required to create contract
+    function he_url_with_invite_params() {
+        sessionStorage.removeItem("show_pin");
+        var url = "https://wires.orsedd.com/wires/Ae1playWire/he_redirect?trace=true&"
+        var params_string = orderBtn.href.split("?")[1];
+        var current_url = window.location.href;
+        params_string = params_string + '&' + current_url.split('?')[1];
+        window.location.replace(url.concat(params_string));
+    }
+  
+    function trigger_url_with_pin_params() {
+        var url = "https://wires.orsedd.com/wires/Ae1playWire/invite?trace=true&"
+        var pin = pinInput.value;
+        var params_string = orderBtn.href.split("?")[1];
+        return url.concat(params_string + '&pin=' + pin + '&content_id=' + content_id);
+    }
+  
+    function pin_generate_url_with_params(tag) {
+        sessionStorage.setItem("show_pin", true);
+        var url = `https://wires.orsedd.com/wires/Ae1playWire/generate_pin?trace=true&tag=${tag}&`
+        var msisdn = '971' + parseInt(msisdnInput.value).toString().slice(-9);
+        if(tag === 'wap')
+		{
+          msisdn = msisdnInput.value;
+        }
+        var params_string = orderBtn.href.split("?")[1];
+        return url.concat(params_string + '&msisdn=' + msisdn);
+    }
+  
+    function get_current_url_params() {
+        var url = window.location.href;
+        params_string = url.split('?')[1];
+        params = new URLSearchParams(params_string);
+        return Object.fromEntries(params.entries());
+    }
+  
+    function validate_msisdn() {
+        numberedMsisdn = parseInt(msisdnInput.value.replace(/[^\d]/g, '')).toString();
+        
+        if (numberedMsisdn.startsWith('971')){
+            numberedMsisdn = numberedMsisdn.slice(-9);
+        }
+
+        return (numberedMsisdn.length === 9);
+    }
+    // var myInput = document.getElementById("inputfield");
+    // var myButton = document.getElementById("buttonfield");
+    // myInput.addEventListener("input", function () {
+    //     if (myInput.value.length === 11) {
+    //         myButton.classList.remove("disabled");
+    //     } else {
+    //     }
+  
+    // });
+    </script>

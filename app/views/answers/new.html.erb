@@ -1,0 +1,23 @@
+<h1>Answers New page</h1>
+
+
+
+<%= form_for(:answer, url:  screening_question_answers_path(Answer.last), method: :post) do |f| %>
+  <% @question.each_with_index do |question, index|%>
+    <br>
+    <br>
+    <%= f.label question.question %>
+    <br>
+    <br>
+    <%= f.select("#{index+1}-#{question.question}", Screening::SCORE.keys) %>
+    <%= f.hidden_field :question_id, value: question.id %>
+    <%= f.hidden_field :screening_id, value: question.screening_id %>
+  <% end %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <%= f.submit "Complete Screening" %>
+<% end %>
