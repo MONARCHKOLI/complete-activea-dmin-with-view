@@ -1,15 +1,15 @@
 <h1>Answers New page</h1>
 
+<%= link_to "Home" , root_path, {class:"btn btn-success"}%>
 
-
-<%= form_for(:answer, url:  screening_question_answers_path(Answer.last), method: :post) do |f| %>
+<%= form_for(:answer, url:  screening_question_answers_path(screening_id: params[:screening_id],question_id:params[:question_id]), method: :post) do |f| %>
   <% @question.each_with_index do |question, index|%>
     <br>
     <br>
-    <%= f.label question.question %>
+    <%= f.label "#{index+1}) " + "#{question.question}" %>
     <br>
     <br>
-    <%= f.select("#{index+1}-#{question.question}", Screening::SCORE.keys) %>
+    <%= f.select("question-id:#{question.id}-#{question.question}", Screening::SCORE.keys) %>
     <%= f.hidden_field :question_id, value: question.id %>
     <%= f.hidden_field :screening_id, value: question.screening_id %>
   <% end %>

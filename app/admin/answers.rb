@@ -42,14 +42,24 @@ ActiveAdmin.register Answer do
       row :screening_type do
         Screening.find(Question.find(resource&.question_id).screening_id).screening_type
       end
-      row :Question do
-        resource.response.keys.each do |question|
-          question
+      # row :Question do
+      #   resource.response.keys.each do |question|
+      #     question
+      #   end
+      # end
+
+      resource.response.keys.each_with_index do |key,index|
+        row "Question_#{index+1}" do
+          key
+        end
+        row "Answer" do
+          resource.response[key]
         end
       end
-      row :answer do
-        "#{resource.response}"
-      end
+      
+      # row :answer do
+      #   "#{resource.response}"
+      # end
       row :created_at do
         resource&.created_at
       end
