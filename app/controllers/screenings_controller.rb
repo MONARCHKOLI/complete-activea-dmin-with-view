@@ -9,6 +9,7 @@ class ScreeningsController < ApplicationController
     end
 
     def new
+        @question = Question.where(screening_id: params[:screening_id])
         @screening = Screening.new
     end
 

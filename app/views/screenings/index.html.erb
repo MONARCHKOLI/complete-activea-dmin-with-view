@@ -3,6 +3,6 @@
 <p>Types Of Screening :</p>
 <ul>
     <%@screening.each_with_index do |screening,index|%>
-        <li><%= link_to "#{screening.screening_type.capitalize}" , new_screening_question_answer_path(screening_id: screening.id, question_id: Question.find_by(screening_id: screening.id).id) %></li>
+        <li><%= link_to "#{screening.screening_type.capitalize}" , new_screening_question_answer_path(screening_id: screening.id, question_id: Question.where(screening_id: screening.id).first.id) %></li>
     <%end%>
 </ul>

@@ -4,15 +4,18 @@
 
 <%= link_to "Home" , root_path%>
 
-<%= form_for(:answer, url:  new_screening_question_answer_path, method: :post) do |f| %>
-  <% @question.each_with_index do |question,index|%>
+<%= form_for(:answer, url:  new_screening_question_answer_path(screening_id: params[:screening_id],question_id:params[:question_id]), method: :post) do |f| %>
+  <% @question.each_with_index do |question, index|%>
     <br>
     <br>
     <%= f.label question.question %>
     <br>
     <br>
-    <%# <%= f.select(@answer, Screening::SCORE.keys, id: "response-#{index}") %> %>
+    <%= f.select("#{index+1}-#{question.question}", Screening::SCORE.keys) %>
+    <%= f.hidden_field :question_id, value: question.id %>
+    <%= f.hidden_field :screening_id, value: question.screening_id %>
   <% end %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
   <br>
   <br>
   <br>
