@@ -33,24 +33,27 @@ ActiveAdmin.register Answer do
 
   show do
     attributes_table title: "Question Details" do
+      row :user_id do
+        User.find(resource&.user_id)
+      end
       row :Description do
         Screening.find(Question.find(resource.question_id).screening_id).screening_description
-      end
-      row :Question do
-        questions.key(resource&.question_id)
-      end
-      row :answer do
-        "#{resource.response}"
       end
       row :screening_type do
         Screening.find(Question.find(resource&.question_id).screening_id).screening_type
       end
+      row :Question do
+        resource.response.keys.each do |question|
+          question
+        end
+      end
+      row :answer do
+        "#{resource.response}"
+      end
       row :created_at do
         resource&.created_at
       end
-      row :user_id do
-        User.find(resource&.user_id)
-      end
+      
     end
   end
 

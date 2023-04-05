@@ -14,4 +14,12 @@
 # Question.create(question:["bbbbbbbbbbbbbbbb", "ccccccccccccccccc"],screening_id: 3)
 # Question.create(question:["vvajvjvahbvavbjhavs", "avkakvnanavks"],screening_id: 2)
 # User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+# AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password', role: 'admin')
+
+# %i[guest support staff manager admin].each do |role|
+#   AdminUser.find_or_create_by!(email: "#{role}@example.com") do |admin_user|
+#     admin_user.role = role
+#     admin_user.password = 'password'
+#     admin_user.password_confirmation = 'password'
+#   end
+# end
