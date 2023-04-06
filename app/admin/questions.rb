@@ -8,6 +8,7 @@ ActiveAdmin.register Question do
   permit_params :question, :screening_id
 
   screening_type = {}
+  
   Screening.pluck(:screening_type).each do |screening|
     screening_type.merge!("#{screening}": Screening.where(screening_type: screening).first.id)
   end

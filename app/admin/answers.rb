@@ -14,11 +14,11 @@ ActiveAdmin.register Answer do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  questions = {}
+  # questions = {}
 
-  Question.all.each do |question|
-    questions.merge!("#{question.question}": question.id)
-  end 
+  # Question.all.each do |question|
+  #   questions.merge!("#{question.question}": question.id)
+  # end 
 
   form do |f|
     # f.inputs do

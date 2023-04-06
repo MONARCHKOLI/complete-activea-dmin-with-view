@@ -6,9 +6,14 @@ class AnswersController < ApplicationController
     end
 
     def create
-        @answer = Answer.new(answer_params)
-        @answer.response = params[:answer].except(:screening_id,:question_id,:user_id)
-        @answer.save
+        # To create the entity individually with question and answers
+
+        params[:answer].permit!.except(:screening_id,:question_id,:user_id).to_h.each do |key,value|
+            @answer = Answer.new(answer_params)
+            @answer[:response] = {"#{key}": value}
+            @answer.save
+        end
+
         redirect_to root_path
     end
 
@@ -25,7 +30,7 @@ class AnswersController < ApplicationController
     private
 
     def answer_params
-        params.require(:answer).permit(:screening_id,:question_id,:user_id,:response)
+        params.require(:answer).permit(:screening_id, :question_id, :user_id, response: {})
     end
 
     # def get_response
