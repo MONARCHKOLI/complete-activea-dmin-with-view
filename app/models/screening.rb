@@ -2,7 +2,7 @@ class Screening < ApplicationRecord
     has_many :check_ins
     has_many :questions
     has_many :answers
-    belongs_to :user
+    belongs_to :user, optional: true
 
     validates :screening_type, uniqueness: true, presence: true
     
